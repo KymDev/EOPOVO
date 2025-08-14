@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>É O POVO - Sua voz para melhorar a cidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #ff6f00;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #5f6368;
+            --success: #34a853;
+            --danger: #ea4335;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            width: 100%;
+            max-width: 320px;
+            margin: 10px auto;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #e65100;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Header Mobile */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo h1 {
+            font-size: 22px;
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo .subtitle {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+        
+        .mobile-menu-btn span {
+            width: 32px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: all 0.3s linear;
+        }
+        
+        /* Hero Section Mobile */
+        .hero {
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            padding: 0 10px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            max-width: 90%;
+        }
+        
+        .hero-badge i {
+            margin-right: 8px;
+        }
+        
+        /* Institutional Section Mobile */
+        .institutional {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 15px;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 100%;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+        
+        .institutional-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .institutional-text {
+            width: 100%;
+            padding: 0 15px;
+        }
+        
+        .institutional-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .institutional-text p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .institutional-image {
+            width: 100%;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .institutional-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .politician-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .politician-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .politician-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            margin-right: 15px;
+        }
+        
+        .politician-info h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .politician-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .politician-quote {
+            font-style: italic;
+            padding: 15px 0 0 15px;
+            border-left: 3px solid var(--primary);
+            color: var(--dark);
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+        
+        /* Features Section Mobile */
+        .features {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .features-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 0 15px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section Mobile */
+        .cta {
+            padding: 70px 0;
+            background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+        
+        .cta p {
+            max-width: 100%;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            padding: 0 20px;
+        }
+        
+        /* Complaint Form Mobile */
+        .complaint-section {
+            display: none;
+            padding: 40px 0;
+            background: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .complaint-form {
+            width: 100%;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+            background: #f8f9fa;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .optional {
+            color: var(--gray);
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+        
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-upload-label {
+            display: block;
+            padding: 16px;
+            background: #f8f9fa;
+            border: 2px dashed #ddd;
+            border-radius: var(--border-radius);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .file-upload-label:hover {
+            border-color: var(--primary);
+            background: rgba(26, 115, 232, 0.05);
+        }
+        
+        .file-upload-label i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .file-upload-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .form-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Footer Mobile */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: #bdc1c6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bdc1c6;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .politician-endorsement {
+            text-align: center;
+            margin: 20px 15px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc1c6;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            padding: 20px 15px 0;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 80px 30px 30px;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--primary);
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .btn {
+                width: auto;
+                padding: 16px 40px;
+            }
+            
+            .features-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .feature-card {
+                flex: 1;
+                min-width: calc(50% - 20px);
+            }
+            
+            .footer-content {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .footer-column {
+                flex: 1;
+                min-width: 200px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .institutional-content {
+                flex-direction: row;
+            }
+            
+            .institutional-text, .institutional-image {
+                flex: 1;
+            }
+            
+            .feature-card {
+                min-width: calc(33.333% - 20px);
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        
+        /* Map */
+        .map-container {
+            height: 200px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: 15px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+        }
+        
+        .map-placeholder i {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #adb5bd;
+        }
+        
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Mobile -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-people-carry"></i>
+                    <div>
+                        <h1>É O POVO</h1>
+                        <span class="subtitle">Participação Cidadã</span>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#" id="mobileComplaintBtn">Abrir Reclamação</a>
+        <a href="#contato">Contato</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Sua voz pode transformar a cidade</h2>
+                <p>Participe ativamente da melhoria do seu município. Reporte problemas, sugira soluções e ajude a construir uma cidade melhor para todos.</p>
+                <a href="#" class="btn btn-secondary" id="heroComplaintBtn">Abrir Reclamação Agora</a>
+                
+                <div class="hero-badge">
+                    <i class="fas fa-handshake"></i>
+                    <span>Apoio do Vereador Thiago Machado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutional Section -->
+    <section class="institutional" id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Participação Cidadã com Apoio</h2>
+                <p>Conectando cidadãos e representantes políticos</p>
+            </div>
+            
+            <div class="institutional-content">
+                <div class="institutional-text">
+                    <h3>Democracia Participativa em Ação</h3>
+                    <p>O É O POVO é uma plataforma de participação cidadã desenvolvida com o apoio do vereador Thiago Machado, que entende a importância da voz do cidadão na construção de políticas públicas eficientes.</p>
+                    
+                    <p>Como professor e representante político, Thiago Machado acredita que a tecnologia pode aproximar a população dos seus representantes, permitindo que as demandas reais das comunidades sejam ouvidas e atendidas com mais agilidade.</p>
+                    
+                    <div class="politician-card">
+                        <div class="politician-header">
+                            <div class="politician-photo">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="politician-info">
+                                <h3>Prof. Thiago Machado</h3>
+                                <p>Vereador e Educador</p>
+                            </div>
+                        </div>
+                        
+                        <p class="politician-quote">
+                            "Esta plataforma é uma ferramenta para empoderar cada cidadão, dando voz a quem realmente constrói a cidade todos os dias."
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="institutional-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f2f5'/%3E%3Ccircle cx='200' cy='120' r='60' fill='%231a73e8'/%3E%3Crect x='140' y='190' width='120' height='40' rx='5' fill='%231a73e8'/%3E%3Crect x='80' y='250' width='240' height='20' rx='5' fill='%23ff6f00'/%3E%3Ctext x='200' y='215' font-family='Arial' font-size='14' fill='white' text-anchor='middle'%3EProf. Thiago Machado%3C/text%3E%3Ctext x='200' y='265' font-family='Arial' font-size='12' fill='white' text-anchor='middle'%3EVereador e Educador%3C/text%3E%3C/svg%3E" alt="Vereador Thiago Machado">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="como-funciona">
+        <div class="container">
+            <div class="section-title">
+                <h2>Como Funciona</h2>
+                <p>Contribua para melhorar sua cidade em poucos passos</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Identifique o Problema</h3>
+                    <p>Informe o endereço onde está ocorrendo o problema que deseja reportar.</p>
+                </div>
+                
+                <div class="feature-card animate delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Descreva a Situação</h3>
+                    <p>Forneça detalhes sobre o problema e selecione a categoria adequada.</p>
+                </div>
+                
+                <div class="feature-card animate delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Envie e Acompanhe</h3>
+                    <p>Acompanhe o status da sua reclamação e o progresso da solução.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Pronto para fazer a diferença?</h2>
+            <p>Junte-se a cidadãos que estão contribuindo para uma cidade melhor. Sua participação é essencial!</p>
+            <a href="#" class="btn" id="ctaComplaintBtn">Abrir Reclamação</a>
+        </div>
+    </section>
+
+    <!-- Complaint Form Section -->
+    <section class="complaint-section" id="complaintSection">
+        <div class="container">
+            <div class="complaint-form">
+                <div class="form-header">
+                    <h2>Registrar Reclamação</h2>
+                    <p>Preencha os detalhes abaixo para reportar um problema</p>
+                </div>
+                
+                <form id="complaintForm">
+                    <div class="form-group">
+                        <label for="name">Nome <span class="optional">(opcional)</span></label>
+                        <input type="text" id="name" class="form-control" placeholder="Seu nome">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Categoria da Reclamação</label>
+                        <select id="category" class="form-control" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="lixo">Lixo e Coleta</option>
+                            <option value="esgoto">Esgoto e Drenagem</option>
+                            <option value="vazamento">Vazamento de Água</option>
+                            <option value="mato">Mato Alto</option>
+                            <option value="iluminacao">Falta de Iluminação</option>
+                            <option value="buraco">Buraco na Rua</option>
+                            <option value="transporte">Transporte Público</option>
+                            <option value="saude">Saúde</option>
+                            <option value="educacao">Educação</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Localização do Problema</label>
+                        <input type="text" id="location" class="form-control" placeholder="Endereço, bairro ou ponto de referência" required>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>O mapa ajudará a localizar precisamente o problema</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Descrição do Problema</label>
+                        <textarea id="description" class="form-control" placeholder="Descreva detalhadamente o problema..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="photo">Anexar Foto (opcional)</label>
+                        <div class="file-upload">
+                            <label for="photoInput" class="file-upload-label">
+                                <i class="fas fa-camera"></i>
+                                <span id="fileLabel">Clique para selecionar uma foto</span>
+                            </label>
+                            <input type="file" id="photoInput" class="file-upload-input" accept="image/*">
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="backBtn">Voltar</button>
+                        <button type="submit" class="btn">Enviar Reclamação</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Sobre o É O POVO</h3>
+                    <p>Plataforma para dar voz aos cidadãos e melhorar a qualidade de vida nas cidades.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categorias</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Infraestrutura</a></li>
+                        <li><a href="#">Serviços Públicos</a></li>
+                        <li><a href="#">Meio Ambiente</a></li>
+                        <li><a href="#">Saúde</a></li>
+                        <li><a href="#">Educação</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Ajuda</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="politician-endorsement">
+                <p>Apoio: <strong>Vereador Thiago Machado</strong>, comprometido com a transparência e participação popular.</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 É O POVO - Todos os direitos reservados.<br>Juntos por uma cidade melhor!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            const closeMenu = document.getElementById('closeMenu');
+            const overlay = document.getElementById('overlay');
+            
+            menuBtn.addEventListener('click', function() {
+                mobileNav.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            overlay.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Complaint form buttons
+            const openComplaintBtns = [
+                document.getElementById('heroComplaintBtn'),
+                document.getElementById('ctaComplaintBtn'),
+                document.getElementById('mobileComplaintBtn')
+            ];
+            
+            const complaintSection = document.getElementById('complaintSection');
+            const backBtn = document.getElementById('backBtn');
+            const complaintForm = document.getElementById('complaintForm');
+            const photoInput = document.getElementById('photoInput');
+            const fileLabel = document.getElementById('fileLabel');
+            
+            // Show complaint form
+            function showComplaintForm() {
+                complaintSection.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Hide complaint form
+            function hideComplaintForm() {
+                complaintSection.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+            
+            // Event listeners for complaint buttons
+            openComplaintBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showComplaintForm();
+                    
+                    // Close mobile menu if open
+                    mobileNav.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            });
+            
+            // Back button
+            backBtn.addEventListener('click', function() {
+                hideComplaintForm();
+            });
+            
+            // File upload label
+            photoInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileLabel.textContent = this.files[0].name;
+                } else {
+                    fileLabel.textContent = 'Clique para selecionar uma foto';
+                }
+            });
+            
+            // Form submission
+            complaintForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const category = document.getElementById('category').value;
+                const location = document.getElementById('location').value;
+                const description = document.getElementById('description').value;
+                
+                if (!category || !location || !description) {
+                    alert('Por favor, preencha os campos obrigatórios.');
+                    return;
+                }
+                
+                // Show success message
+                alert('Reclamação enviada com sucesso! Obrigado por contribuir para melhorar nossa cidade.');
+                
+                // Reset form
+                complaintForm.reset();
+                fileLabel.textContent = 'Clique para selecionar uma foto';
+                
+                // Hide form
+                hideComplaintForm();
+            });
+            
+            // Animation on scroll
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.animate');
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initial animation check
+            animateOnScroll();
+            
+            // Scroll event listener
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html>
